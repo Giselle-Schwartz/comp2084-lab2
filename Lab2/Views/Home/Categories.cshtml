@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Lab2.Models.Category>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Categories";
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    @foreach (var d in Model)
+    {
+        <li>@Html.ActionLink(d.Name, "Details", "Home", new { CategoryName = d.Name }, null)</li>
+    }
+</ul>
